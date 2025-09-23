@@ -39,6 +39,10 @@ echo "starting run at: `date`"
 #-doGeno 4 -doglf 2 -doPost 1 -doCounts 1 -doplink 2 -doQsDist 1 -doDepth 1 -doMaf 2 -GL 1 -doMajorMinor 1 -dobcf 1 -doHWE 1 -dosnpstat 1 \
 #-SNP_pval 1e-6 -minMapQ 20 -minQ 30 -minInd ${minInd} -setMinDepthInd 3 -geno_mindepth 3 -only_proper_pairs 1 -remove_bads 1 -uniqueOnly 1 -skipTriallelic 1
 
+# Add detailes of sites to .arg file
+tail -n 5 slurm-*-$SLURM_JOBID.out| head -n 1 >> ${angsdFolder}/${batchName}.arg
+tail -n 4 slurm-*-$SLURM_JOBID.out| head -n 1 >> ${angsdFolder}/${batchName}.arg
+
 # convert bcf to bed format (generates .bed, .bim, .fam, .ped, .map files)
 # using plink to convert, plink2 does not have -bcf option yet
 # could also probably convert bcf to vcf with bcftools, then run plink2 directly
