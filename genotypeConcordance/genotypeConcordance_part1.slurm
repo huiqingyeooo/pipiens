@@ -73,4 +73,8 @@ sed -i -f "$sedScript" "${2}_nanopore_norm.vcf"
 # Clean up
 rm "$sedScript"
 
+# More substitutions
+sed -i "s#/scratch/36471977/2_indelRealigned/##g;s#_q20##g;s#_q10##g;s#_realigned.bam##g;s#_markDups.bam##g" ${1}_nanopore_norm.vcf
+sed -i "s#/scratch/36471977/2_indelRealigned/##g;s#_q20##g;s#_q10##g;s#_realigned.bam##g;s#_markDups.bam##g" ${1}_illumina_norm.vcf
+
 echo "Job finised with exit code $? at: `date`"
