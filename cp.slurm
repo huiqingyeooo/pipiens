@@ -8,9 +8,9 @@
 
 echo "starting run at: `date`"
 
-cp -r /scratch/33430647/0_trimmedReads_AGS /scratch/33462325/
-#cd /work/soghigian_lab/huiqing.yeo/pipiens/0_trimmedReads_AGS
-#rm *fq.gz
+old_scratch=/work/soghigian_lab/data/illumina/chgi/mosquitoes/
+new_scratch=/scratch/44823692
+
+cp -r ${old_scratch}/* ${new_scratch}
 
 echo "Job finised with exit code $? at: `date`"
-
