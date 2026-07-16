@@ -17,7 +17,6 @@ SCRATCH=/scratch/$SLURM_JOBID
 cd ${SCRATCH}
 mkdir placeholder
 
-echo ${SCRATCH}
+echo "SCRATCH directory created at: ${SCRATCH} on `date`"
 
 echo "Job finised with exit code $? at: `date`"
-
