@@ -28,7 +28,7 @@ cd ${fastpOutput}
 #echo ${taxa}
 #echo ${taxname}
 #sed "s/TEMPLATE/${taxname}/g;s/SAMPLE/${taxa}/g" ${scripts}/fastp_lane1_TEMPLATE.slurm > ${fastpOutput}/fastp_${taxname}.slurm
-#sbatch ${fastpOutput}/fastp_${taxname}.slurm --output ${fastpOutput}/slurm-%j.out
+#sbatch --output ${fastpOutput}/slurm-%j.out ${fastpOutput}/fastp_${taxname}.slurm
 #sleep 1
 #done
 

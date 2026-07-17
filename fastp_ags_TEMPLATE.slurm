@@ -26,7 +26,7 @@ cd ${fastpOutput}
 #taxa=$(basename $file _R1.fastq.gz)
 #echo ${taxa}
 #sed "s/TEMPLATE/${taxa}/g" ${scripts}/fastp_ags_TEMPLATE.slurm > ${fastpOutput}/fastp_${taxa}.slurm
-#sbatch ${fastpOutput}/fastp_${taxa}.slurm --output ${fastpOutput}/slurm-%j.out
+#sbatch --output ${fastpOutput}/slurm-%j.out ${fastpOutput}/fastp_${taxa}.slurm 
 #sleep 1
 #done
 
