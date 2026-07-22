@@ -44,4 +44,4 @@ rm TEMPLATE_unpa1.fq.gz
 rm TEMPLATE_unpa2.fq.gz
 echo TEMPLATE_done
 
-echo "Job finised with exit code $? at: `date`"
+echo "Job finished with exit code $? at: `date`"
