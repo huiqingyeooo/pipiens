@@ -1,4 +1,4 @@
-fastpOutput=/work/soghigian_lab/huiqing.yeo/pipiens/0_trimmedReads/ags
+fastpOutput=/scratch/45152027/0_trimmedReads/sra
 
 # check slurm log files
 for i in $(ls ${fastpOutput}/slurm-*.out);

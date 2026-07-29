@@ -1,4 +1,5 @@
-# Finding Culex pipiens complex whole genome reads in Genbank repository
+# Pipeline for pipiens popgen
+## Finding Culex pipiens complex whole genome reads in Genbank repository
 
 1. Search for Culex pipiens in genbank taxonomy (https://www.ncbi.nlm.nih.gov/datasets/taxonomy/7175/)
 2. Go to BioProject and click on the number of projects (#87)
@@ -7,6 +8,9 @@
 5. Click on one of the samples, and the click on 'All runs' under the 'Study' section
 6. This will bring you to an SRA run selector with all the metadata available under the BioProject
 7. More information about the samples is available if you download 'Metadata' (e.g., locality, latlong, collection date and type)
+8. Download SRA and convert to fastq.gz files (sratoolkit_TEMPLATE.slurm)
+
+## 
 
 
 

@@ -18,25 +18,30 @@ PATH=/work/soghigian_lab/apps/samtools-1.15/bin:$PATH
 PATH=$PATH:/work/soghigian_lab/apps/bedtools2/bin
 
 # define variables
-refGenome=/work/soghigian_lab/huiqing.yeo/pipiens/refGenome/pipiens
-fastpFiles=/work/soghigian_lab/huiqing.yeo/pipiens/0_trimmedReads_AGS
-bamFiles=/work/soghigian_lab/huiqing.yeo/pipiens/1_alignedReads_pipiens_AGS
+refGenome=/work/soghigian_lab/huiqing.yeo/pipiens/refGenome/pipiens_new
+fastpFiles=/scratch/45152027/0_trimmedReads/sra
+bamFiles=/scratch/45152027/1_alignedReads
+scripts=/work/soghigian_lab/huiqing.yeo/pipiens/scripts/pipiens
 
 #Loop code 
 #cd ${fastpFiles}
-#for sample in $(ls *_outfile1.fq.gz);
+#for sample in $(ls A*_outfile1.fq.gz);
 #do
-#file=`echo $sample | awk -F"_" '{print $1"_"$2"_"$3}'`
+#file=`echo $sample | awk -F"_" '{print $1}'`
 #echo ${file}
-#cd ${bamFiles}
-#sed "s/TEMPLATE/${file}/g" bowtie_pipiens_TEMPLATE.slurm > bowtie_pipiens_${file}.slurm 
-#sbatch bowtie_pipiens_${file}.slurm
+#cd ${scripts}
+#sed "s/TEMPLATE/${file}/g" bowtie_pipiens_TEMPLATE.slurm > ${bamFiles}/bowtie_pipiens_${file}.slurm 
+#sbatch --output ${bamFiles}/slurm-%j.out bowtie_pipiens_${file}.slurm
 #sleep 1
 #done
 
+
 ####### Script ##################################
-cd /scratch/${SLURM_JOB_ID}
-echo check /scratch/${SLURM_JOB_ID}
+#cd /scratch/${SLURM_JOB_ID}
+#echo check /scratch/${SLURM_JOB_ID}
+
+cd ${bamFiles}
+
 echo TEMPLATE-pipiens
 
 bowtie2 -p 12 --phred33 --local -x ${refGenome}/PIPIENS -1 ${fastpFiles}/TEMPLATE_outfile1.fq.gz -2 ${fastpFiles}/TEMPLATE_outfile2.fq.gz -U ${fastpFiles}/TEMPLATE_s.fq.gz -S ./TEMPLATE.sam
@@ -48,7 +53,6 @@ rm TEMPLATE.sam
 samtools sort TEMPLATE.bam -o TEMPLATE_sorted.bam
 rm TEMPLATE.bam
 
-cp ./TEMPLATE_sorted.bam ${bamFiles}
-
+#cp ./TEMPLATE_sorted.bam ${bamFiles}
 
 echo "Job finised with exit code $? at: `date`"
