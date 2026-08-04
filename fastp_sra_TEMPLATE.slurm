@@ -14,19 +14,18 @@ module load gcc/10.2.0
 module load lib/zlib/1.2.11
 module load perl/5.32.0
 
-fastpInput=/scratch/45152027/sratoolkit/sra
-fastpOutput=/scratch/45152027/0_trimmedReads/sra
+fastpInput=/scratch/45624817/sratoolkit/sra
+fastpOutput=/scratch/45624817/0_trimmedReads
 scripts=/work/soghigian_lab/huiqing.yeo/pipiens/scripts/pipiens
 
 cd ${fastpOutput}
 
 ########## code for TEMPLATE jobs ###########
-#to generate list
-#ls A*_1.fastq.gz > list_A.txt
-
-#for file in $(cat ${fastpInput}/list_A.txt);
+#Loop code 
+#cd ${fastpInput}
+#for sample in $(ls A*_1.fastq.gz);
 #do
-#taxa=$(basename $file _1.fastq.gz)
+#taxa=$(basename $sample_1.fastq.gz)
 #echo ${taxa}
 #sed "s/TEMPLATE/${taxa}/g" ${scripts}/fastp_sra_TEMPLATE.slurm > ${fastpOutput}/fastp_${taxa}.slurm
 #sbatch --output ${fastpOutput}/slurm-%j.out ${fastpOutput}/fastp_${taxa}.slurm 

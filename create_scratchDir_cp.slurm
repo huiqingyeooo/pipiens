@@ -8,12 +8,13 @@
 
 echo "starting run at: `date`"
 ####### Set environment variables ###############
-#OLD_SCRATCH=45010328 #20 june
-#NEW_SCRATCH=/scratch/$SLURM_JOBID
+OLD_SCRATCH=45152027 #24 jul
+NEW_SCRATCH=/scratch/$SLURM_JOBID
 
 # 15 Jul /scratch/44823692
 # 20 Jul /scratch/45010328
 # 24 Jul /scratch/45152027
+# 31 Jul /scratch/45624817
 
 echo "New scratch directory: $NEW_SCRATCH"
 
@@ -25,8 +26,7 @@ for i in $list
 do
 echo "Old directory path: $i"
 padded_counter=$(printf '%02d' $counter)
-#j=`sed "s/$OLD_SCRATCH/$SLURM_JOBID/g" <<< "$i"`
-j=`sed "s/$OLD_SCRATCH/$TEST/g" <<< "$i"`
+j=`sed "s/$OLD_SCRATCH/$SLURM_JOBID/g" <<< "$i"`
 echo "New directory path: $j"
 mkdir -p $j
 sed "s#OLD_SCRATCH_FOLDER#${i}#g;s#NEW_SCRATCH_FOLDER#${j}#g" cp_TEMPLATE.slurm > cp_num$padded_counter.slurm

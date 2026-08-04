@@ -10,18 +10,22 @@
 7. More information about the samples is available if you download 'Metadata' (e.g., locality, latlong, collection date and type)
 8. Download SRA and convert to fastq.gz files (sratoolkit_TEMPLATE.slurm)
 
-## 
+## Trim reads
+- Trimming reads using fastp. As there are samples from multiple sources, it was easier to customise each fastp script according to their source. (E.g., fastp_lane1_TEMPLATE.slurm, fastp_ags_TEMPLATE.slurm, fastp_sra_TEMPLATE.slurm)
+
+## Align reads
+- Read alignment was carried out in batches (alphabetical order)
 
 
 
-# Notes on BioProjects of interest:
+### Notes on BioProjects of interest:
 
-## Sequencing of the mosquitoes Culex lineages Tunis and Harash
+#### Sequencing of the mosquitoes Culex lineages Tunis and Harash
 10 isofemales from each population pooled and sequenced on both Illumina and Nanopore platforms
 https://academic.oup.com/genetics/advance-article/doi/10.1093/genetics/iyag135/8691036?login=true
 https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP678574&o=acc_s%3Aa
 
-## Wolbachia populations in Culex pipiens individuals from Southern France
+#### Wolbachia populations in Culex pipiens individuals from Southern France
 Trouche et al 2024
 https://academic.oup.com/ismecommun/article/4/1/ycae078/7691189?login=true#468312085
 https://www.ncbi.nlm.nih.gov/Traces/study/?acc=ERP141313&o=acc_s%3Aa

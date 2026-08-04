@@ -7,7 +7,7 @@
 #SBATCH --mem=80G
 
 ####### Set environment variables ###############
-SCRATCH=/scratch/45010328
+SCRATCH=/scratch/45624817
 export PATH=$PATH:/work/soghigian_lab/apps/sratoolkit.3.1.1-ubuntu64/bin/
 
 # change config path to output directory

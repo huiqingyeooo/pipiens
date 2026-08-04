@@ -3,3 +3,4 @@ track_scratch/
 srrlist_*.txt
 cp_num*.slurm
 slurm-*.out
+loop_code.sh
