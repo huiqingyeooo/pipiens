@@ -2,7 +2,7 @@ outputDir=/scratch/45624817/1_alignedReads/slurm_output
 
 # check slurm log files
 for i in $(ls ${outputDir}/slurm-*.out);
-do 
+do
 col1=`echo ${i}`
 #col2=`grep "sample_" ${i}`
 col2=`grep -e "-pipiens" ${i}`

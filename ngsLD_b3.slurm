@@ -14,7 +14,6 @@ angsdOutput=/work/soghigian_lab/huiqing.yeo/pipiens/3_angsd/b3_nominmaf_minInd10
 NGSLD=/work/soghigian_lab/apps/ngsLD
 
 batchName=b3
-#SCRATCH=/scratch/$SLURM_JOBID
 SCRATCH=/scratch/33644184
 
 echo "starting run at: `date`"
